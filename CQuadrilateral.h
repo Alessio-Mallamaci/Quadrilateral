@@ -31,6 +31,7 @@ protected:
 	
 	void SetSides(float s0, float s1, float s2, float s3);
 	void SetAngles(float a0, float a1, float a2, float a3);	
+	void SetGridCoord(coord_type Coord);
 	bool Check();
 
 
