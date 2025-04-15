@@ -56,7 +56,7 @@ void Quadrilateral::SetAngles(float a0, float a1, float a2, float a3) {
 	angles[3] = a3;
 
 	if (!Check())
-		Reset();	
+		WarningMessage("Quadrilateral - the sum of angles should be 360");	
 	
 	return;
 

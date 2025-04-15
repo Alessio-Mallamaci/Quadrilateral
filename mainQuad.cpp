@@ -27,8 +27,13 @@ int main (){
     cout <<"rettangolo - 1 area: " << area <<endl;
 
     A->Dump();
-    //A->SetWidth(11,4);
-    r1.GetAngles(ao,a1,a2,a3);
+    
+    r1.SetWidth(12);
 
+    A->Dump();
+
+    area = r1.GetArea();
+    cout <<"rettangolo - 1 area: " << area <<endl;
+    
     return 0;
 }
