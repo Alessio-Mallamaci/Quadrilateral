@@ -7,15 +7,6 @@ Quadrilateral::Quadrilateral() {
 
 	Init();
 
-} 
-
-/// @brief copy constructor 
-/// @param o reference to the object that should be copied 
-Quadrilateral::Quadrilateral(const Quadrilateral &o) {
-	
-	cout << "Quadrilateral - copy constructor" << endl;
-
-	Init(o);
 }
 
 /// @brief destructor
@@ -73,25 +64,6 @@ void Quadrilateral::SetGridCoord(coord_type Coord) {
 	
 	gridCoord.x = Coord.x;
 	gridCoord.y = Coord.y;
-}
-
-/// @brief overload of operator = 
-/// @param o reference to the object on the right side of the operator 
-/// @return reference to the object on the left side of the operator 
-Quadrilateral& Quadrilateral::operator=(const Quadrilateral &o) { 
-
-	cout << "Quadrilateral - operator =" << endl;
-	Init(o);
-	return *this;
-	
-}
-
-/// @brief overload of operator == 
-/// @param o reference to the object on the right side of the operator 
-/// @return always false 
-bool Quadrilateral::operator==(const Quadrilateral &o) {
-
-	return false;
 }
 
 
@@ -208,6 +180,8 @@ void Quadrilateral::WarningMessage(const char *string) {
 /// @brief for debugging: all about the object
 void Quadrilateral::Dump() {
 	
+	cout << endl;
+	cout << "--- Quadrilateral ---" <<endl;
 	cout << endl;
 	cout << "Reference point on the grid: " << gridCoord.x << "," << gridCoord.y << endl; 
 	cout << "Sides = " << sides[0] << "; " << sides[1] << "; " << sides[2] << "; " << sides[3] << "; " << endl;

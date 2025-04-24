@@ -179,11 +179,14 @@ void Rectangle::Dump() {
 	cout << "---Rectangle---" << endl; 
 	cout << endl;
 	
-	cout << "Width = " << width << endl;
-	cout << "Heigth = " << height << endl;
+	
+	cout << "Reference point on the grid: " << gridCoord.x << "," << gridCoord.y <<endl;
+	cout << "Width = " << width << sides [0] <<endl;
+	cout << "Heigth = " << height << sides [1] <<endl;
+	cout << "Perimeter = " << GetPerimeter() << endl;
 	cout << "Area = " << GetArea() << endl;
 	
-	Quadrilateral::Dump();
+	//Quadrilateral::Dump();
 	
 	cout << endl;
 

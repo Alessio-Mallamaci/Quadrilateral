@@ -40,15 +40,9 @@ public:
 	/// @name CONSTRUCTORS/DESTRUCTOR
 	/// @{
 	Quadrilateral();
-	Quadrilateral(const Quadrilateral &o);
 	~Quadrilateral();
 	/// @}
-	
-	/// @name OPERATORS
-	/// @{
-	Quadrilateral& operator=(const Quadrilateral &o); 
-	bool operator==(const Quadrilateral &o);
-	/// @}
+
 	
 	/// @name BASIC HANDLING
 	/// @{
@@ -66,11 +60,13 @@ public:
 	void GetGridCoord(coord_type &Coord);
 	/// @}
 	
+	virtual float GetArea()=0; //ha diverse implicazioni
+
 	/// @name DEBUG and SERIALIZATION 
 	/// @{
 	void ErrorMessage(const char *string); 
 	void WarningMessage(const char *string);
-	void Dump();
+	virtual void Dump(); //mi permette di ....
 	/// @}
 
 };
