@@ -42,7 +42,7 @@ public:
 	Quadrilateral();
 	~Quadrilateral();
 	/// @}
-
+	
 	
 	/// @name BASIC HANDLING
 	/// @{
@@ -58,15 +58,16 @@ public:
 	void GetSides(float &s0, float &s1, float &s2, float &s3);
 	void GetAngles(float &a0, float &a1, float &a2, float &a3);
 	void GetGridCoord(coord_type &Coord);
+	
+	virtual float GetArea()=0;
+	
 	/// @}
 	
-	virtual float GetArea()=0; //ha diverse implicazioni
-
 	/// @name DEBUG and SERIALIZATION 
 	/// @{
 	void ErrorMessage(const char *string); 
 	void WarningMessage(const char *string);
-	virtual void Dump(); //mi permette di ....
+	virtual void Dump();
 	/// @}
 
 };

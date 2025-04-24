@@ -70,7 +70,7 @@ Rectangle& Rectangle::operator=(const Rectangle &r) {
 /// @return true if the two objects have the same width and the same length  
 bool Rectangle::operator==(const Rectangle &r) { 
 
-	if (r.width == width && r.height == height)
+	if (r.sides[0] == sides[0] && r.sides[1] == sides[1])
 		return true;
 		
 	return false;
@@ -79,6 +79,7 @@ bool Rectangle::operator==(const Rectangle &r) {
 /// @brief default initialization of the object
 void Rectangle::Init() {
 	SetDim(2,1);
+	SetAngles(90,90,90,90);
 	
 }
 
@@ -87,7 +88,7 @@ void Rectangle::Init() {
 /// @param r reference to the object that should be copied 
 void Rectangle::Init(const Rectangle &r) {
 	Init();
-	SetDim(r.width,r.height);
+	SetDim(r.sides[0],r.sides[1]);
 }
 
 /// @brief total reset of the object  
@@ -107,7 +108,7 @@ void Rectangle::SetWidth(float w) {
 		return;
 	}
 
-	SetDim(w,height);
+	SetDim(w,sides[1]);
 
 }
 
@@ -120,7 +121,7 @@ void Rectangle::SetHeight(float h) {
 		return;
 	}
 
-	SetDim(width,h);
+	SetDim(sides[0],h);
 
 }
 
@@ -130,7 +131,7 @@ void Rectangle::SetHeight(float h) {
 /// @return width 
 float Rectangle::GetWidth() {
 
-	return width;
+	return sides[0];
 
 }
 
@@ -138,7 +139,7 @@ float Rectangle::GetWidth() {
 /// @return height
 float Rectangle::GetHeight() {
 
-	return height;
+	return sides[1];
 }
 
 /// @brief set width and length of the object
@@ -146,9 +147,7 @@ float Rectangle::GetHeight() {
 /// @param h height
 void Rectangle::SetDim(float w, float h) {
 
-	width = w;
-	height = h;  
-	Quadrilateral::SetSides(w,h,w,h);
+	SetSides(w,h,w,h);
 	
 	return;
 }
@@ -158,8 +157,8 @@ void Rectangle::SetDim(float w, float h) {
 /// @param h height
 void Rectangle::GetDim(float &w, float &h) {
 
-	w = width;
-	h = height; 
+	w = sides[0];
+	h = sides[1]; 
 	
 	return;
 }
@@ -168,7 +167,7 @@ void Rectangle::GetDim(float &w, float &h) {
 /// @return the area 
 float Rectangle::GetArea() {
 	
-	return (width*height);
+	return (sides[0]*sides[1]);
 }
 
 
@@ -179,14 +178,13 @@ void Rectangle::Dump() {
 	cout << "---Rectangle---" << endl; 
 	cout << endl;
 	
-	
-	cout << "Reference point on the grid: " << gridCoord.x << "," << gridCoord.y <<endl;
-	cout << "Width = " << width << sides [0] <<endl;
-	cout << "Heigth = " << height << sides [1] <<endl;
+	cout << "Reference point on the grid: " << gridCoord.x << "," << gridCoord.y << endl; 
+	cout << "Width = " << sides[0] << endl;
+	cout << "Heigth = " << sides[1] << endl;
 	cout << "Perimeter = " << GetPerimeter() << endl;
 	cout << "Area = " << GetArea() << endl;
 	
-	//Quadrilateral::Dump();
+	Quadrilateral::Dump();
 	
 	cout << endl;
 

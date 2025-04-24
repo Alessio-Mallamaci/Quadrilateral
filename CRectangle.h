@@ -19,8 +19,7 @@ using namespace std;
 class Rectangle : public Quadrilateral
 {
 protected:
-	float height;
-	float width;
+	
 
 public:
 	

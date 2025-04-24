@@ -7,7 +7,8 @@ Quadrilateral::Quadrilateral() {
 
 	Init();
 
-}
+} 
+
 
 /// @brief destructor
 Quadrilateral::~Quadrilateral() {
@@ -181,12 +182,13 @@ void Quadrilateral::WarningMessage(const char *string) {
 void Quadrilateral::Dump() {
 	
 	cout << endl;
-	cout << "--- Quadrilateral ---" <<endl;
+	cout << "---Quadrilateral---" << endl; 
+	cout << endl;
+	
 	cout << endl;
 	cout << "Reference point on the grid: " << gridCoord.x << "," << gridCoord.y << endl; 
 	cout << "Sides = " << sides[0] << "; " << sides[1] << "; " << sides[2] << "; " << sides[3] << "; " << endl;
 	cout << "Angles = " << angles[0] << "; " << angles[1] << "; " << angles[2] << "; " << angles[3] << "; " << endl;
-	cout << "Perimeter = " << GetPerimeter() << endl;
 	cout << endl;
 
 }
